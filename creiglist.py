@@ -107,9 +107,13 @@ def get_page_data(url):
     except:
         data['Sale type'] = ""
     try:
-        data['Catagory'] = soup.find(class_="crumb category").text.strip()
+        data['Category'] = soup.find(class_="crumb category").text.strip().split('-')[0]
     except:
-        data['Catagory'] = ""
+        data['Category'] = ""
+    try:
+        data['By Dealer/By Owner'] = soup.find(class_="crumb category").text.strip().split('-')[1].strip()
+    except:
+        data['Category'] = ""
     
 
     email_in_head = get_email(data['Heading'])
@@ -174,7 +178,6 @@ def get_page_data(url):
         pass
     at_list = list(at_list)
     data['Other Attributes'] = ",".join(at_list)
-    print(data['Other Attributes'])
     data['Site URL'] = url
     img_links = []
     image_url_list = soup.find_all('img')
