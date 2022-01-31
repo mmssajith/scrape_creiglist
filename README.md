@@ -19,3 +19,5 @@ On their [Homepage](https://www.craigslist.org/about/sites), you can see all the
 
 ## Disclaimer
 #### This is not build for any commercial purposes or any data here is not used for any commercial purposes. This is purely build for educational purposes only. Use this application at your own risk.
+
+Sample output file is provided here.
